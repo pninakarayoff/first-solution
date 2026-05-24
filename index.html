@@ -337,60 +337,73 @@
         </div>
 
         <div class="bg-white border border-slate-200 p-8 md:p-10 rounded-3xl shadow-sm">
-         <form action="https://formspree.io/f/mgoqzgvy" method="POST" class="space-y-4 text-right">
-  <div>
-    <label class="block text-xs font-bold text-slate-600 mb-1">שם מלא</label>
-    <input
-      type="text"
-      name="name"
-      required
-      placeholder="לדוגמה: ישראלה ישראלי"
-      class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
-    >
-  </div>
+          <div id="form-success" class="hidden mb-6 rounded-2xl bg-teal-50 border border-teal-200 p-4 text-sm text-brandTeal font-medium">
+            תודה, הפרטים נשלחו בהצלחה. אחזור אלייך בהקדם.
+          </div>
 
-  <div>
-    <label class="block text-xs font-bold text-slate-600 mb-1">טלפון</label>
-    <input
-      type="tel"
-      name="phone"
-      required
-      placeholder="050-1234567"
-      class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
-    >
-  </div>
+          <div id="form-error" class="hidden mb-6 rounded-2xl bg-red-50 border border-red-200 p-4 text-sm text-red-600 font-medium">
+            משהו השתבש בשליחה. נסי שוב או שלחי לי הודעה בוואטסאפ.
+          </div>
 
-  <div>
-    <label class="block text-xs font-bold text-slate-600 mb-1">אימייל</label>
-    <input
-      type="email"
-      name="email"
-      required
-      placeholder="office@business.co.il"
-      class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
-    >
-  </div>
+          <form id="contact-form" class="space-y-4 text-right">
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1">שם מלא</label>
+              <input
+                type="text"
+                name="name"
+                required
+                data-fs-field
+                placeholder="לדוגמה: ישראלה ישראלי"
+                class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
+              >
+            </div>
 
-  <div>
-    <label class="block text-xs font-bold text-slate-600 mb-1">מה הכי תקוע כרגע בעסק?</label>
-    <textarea
-      name="message"
-      rows="4"
-      required
-      placeholder="כמה מילים על מה שמרגיש מסורבל, ידני או עמוס"
-      class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
-    ></textarea>
-  </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1">טלפון</label>
+              <input
+                type="tel"
+                name="phone"
+                required
+                data-fs-field
+                placeholder="050-1234567"
+                class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
+              >
+            </div>
 
-  <input type="hidden" name="_subject" value="פנייה חדשה מדף מיפוי ובניית פתרון ראשון לעסק">
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1">אימייל</label>
+              <input
+                type="email"
+                name="email"
+                required
+                data-fs-field
+                placeholder="office@business.co.il"
+                class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
+              >
+            </div>
 
-  <button
-    type="submit"
-    class="w-full bg-brandPurple hover:bg-brandTeal text-white font-bold py-4 px-6 rounded-xl transition-all shadow-md shadow-brandPurple/10 mt-2"
-  >
-    לשליחת פרטים לשיחת אבחון
-  </button>
-</form>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 mb-1">מה הכי תקוע כרגע בעסק?</label>
+              <textarea
+                name="message"
+                rows="4"
+                required
+                data-fs-field
+                placeholder="כמה מילים על מה שמרגיש מסורבל, ידני או עמוס"
+                class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
+              ></textarea>
+            </div>
+
+            <input type="hidden" name="_subject" value="פנייה חדשה מדף מיפוי ובניית פתרון ראשון לעסק">
+
+            <button
+              type="submit"
+              id="submit-button"
+              class="w-full bg-brandPurple hover:bg-brandTeal text-white font-bold py-4 px-6 rounded-xl transition-all shadow-md shadow-brandPurple/10 mt-2"
+            >
+              לשליחת פרטים לשיחת אבחון
+            </button>
+          </form>
         </div>
       </div>
     </div>
@@ -403,5 +416,26 @@
       <p class="text-[10px] text-slate-500">מיפוי, בנייה ואופטימיזציה של תהליכים ומערכות לעסקים פעילים.</p>
     </div>
   </footer>
+
+  <script>
+    window.formspree = window.formspree || function () {
+      (formspree.q = formspree.q || []).push(arguments);
+    };
+
+    formspree('initForm', {
+      formElement: '#contact-form',
+      formId: 'mgoqzgvy',
+      onSuccess: function () {
+        document.getElementById('form-success').classList.remove('hidden');
+        document.getElementById('form-error').classList.add('hidden');
+        document.getElementById('contact-form').reset();
+      },
+      onError: function () {
+        document.getElementById('form-error').classList.remove('hidden');
+        document.getElementById('form-success').classList.add('hidden');
+      }
+    });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
