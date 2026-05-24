@@ -52,7 +52,6 @@
     .hero-glow::before {
       content: "";
       position: absolute;
-      inset: auto;
       width: 26rem;
       height: 26rem;
       right: -8rem;
@@ -103,6 +102,7 @@
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
         <a href="#problem" class="hover:text-white smooth-hover">האתגר</a>
         <a href="#about-service" class="hover:text-white smooth-hover">מה אני עושה</a>
+        <a href="#testimonials" class="hover:text-white smooth-hover">עדויות</a>
         <a href="#solutions-grid" class="hover:text-white smooth-hover">מה אפשר לבנות</a>
         <a href="#methodology" class="hover:text-white smooth-hover">איך זה עובד</a>
         <a href="#contact" class="hover:text-white smooth-hover">יצירת קשר</a>
@@ -308,7 +308,31 @@
     </div>
   </section>
 
-  <section id="solutions-grid" class="py-20 px-6 bg-lightBg">
+  <section id="testimonials" class="py-20 px-6 bg-lightBg">
+    <div class="max-w-6xl mx-auto space-y-14">
+      <div class="text-center max-w-2xl mx-auto space-y-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">הוכחה מהשטח</span>
+        <h2 class="text-3xl lg:text-4xl font-black text-pageDark">
+          לא רק מסר יפה. תהליך שעוזר לעשות סדר ולהתחיל לזוז.
+        </h2>
+        <p class="text-slate-500 text-sm md:text-base leading-relaxed">
+          אלה לא הבטחות כלליות. אלה תגובות אמיתיות של נשים שיצאו עם יותר בהירות, יותר כיוון ויותר יכולת להתחיל לפעול.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div class="bg-white border border-slate-200 rounded-[28px] p-4 shadow-card">
+          <img src="anat.jpg" alt="עדות לקוחה" class="w-full rounded-[20px] object-cover" />
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-[28px] p-4 shadow-card">
+          <img src="jenssya.jpeg" alt="עדות לקוחה" class="w-full rounded-[20px] object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="solutions-grid" class="py-20 px-6 bg-white">
     <div class="max-w-6xl mx-auto space-y-16">
       <div class="text-center max-w-2xl mx-auto space-y-4">
         <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">מה אפשר לפתור כבר בשלב הראשון</span>
@@ -321,19 +345,19 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white border border-slate-200 rounded-3xl p-7 shadow-card hover:-translate-y-1 smooth-hover">
+        <div class="bg-lightBg border border-slate-200 rounded-3xl p-7 shadow-card hover:-translate-y-1 smooth-hover">
           <div class="flex items-center justify-between mb-5">
             <span class="text-xs font-black text-brandTeal tracking-[0.2em] uppercase">01</span>
             <span class="w-10 h-10 rounded-2xl bg-brandTeal/10 text-brandTeal flex items-center justify-center">↗</span>
           </div>
           <h4 class="text-xl font-bold text-pageDark mb-3">אוטומציית לידים ופניות</h4>
           <p class="text-slate-600 text-sm leading-relaxed mb-4">
-חיבור בין טופס, מייל, וואטסאפ או גיליון, כך שכל פנייה נכנסת למקום הנכון ומקבלת טיפול מסודר מההתחלה.
+            חיבור בין טופס, מייל, וואטסאפ או גיליון, כך שכל פנייה נכנסת למקום הנכון ומקבלת טיפול מסודר מההתחלה.
           </p>
-          <div class="text-sm font-bold text-brandPurple">פחות מעקב ידני. יותר תגובה בזמן..</div>
+          <div class="text-sm font-bold text-brandPurple">פחות מעקב ידני. יותר תגובה בזמן.</div>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-3xl p-7 shadow-card hover:-translate-y-1 smooth-hover">
+        <div class="bg-lightBg border border-slate-200 rounded-3xl p-7 shadow-card hover:-translate-y-1 smooth-hover">
           <div class="flex items-center justify-between mb-5">
             <span class="text-xs font-black text-brandTeal tracking-[0.2em] uppercase">02</span>
             <span class="w-10 h-10 rounded-2xl bg-brandTeal/10 text-brandTeal flex items-center justify-center">✦</span>
@@ -342,10 +366,10 @@
           <p class="text-slate-600 text-sm leading-relaxed mb-4">
             טופס שמסדר את המידע מראש, חוסך שיחות חוזרות, ומעביר את הנתונים ישירות למקום הנכון.
           </p>
-          <div class="text-sm font-bold text-brandPurple">כדי להפסיק לרדוף אחרי מידע.</div>
+          <div class="text-sm font-bold text-brandPurple">פחות רדיפה אחרי מידע. יותר בהירות מהתחלה.</div>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-3xl p-7 shadow-card hover:-translate-y-1 smooth-hover">
+        <div class="bg-lightBg border border-slate-200 rounded-3xl p-7 shadow-card hover:-translate-y-1 smooth-hover">
           <div class="flex items-center justify-between mb-5">
             <span class="text-xs font-black text-brandTeal tracking-[0.2em] uppercase">03</span>
             <span class="w-10 h-10 rounded-2xl bg-brandTeal/10 text-brandTeal flex items-center justify-center">⟲</span>
@@ -354,7 +378,7 @@
           <p class="text-slate-600 text-sm leading-relaxed mb-4">
             חיבור בין כלים שכבר קיימים אצלך בעסק כדי להוריד הקלדה חוזרת, לצמצם טעויות ולייצר זרימה ברורה יותר.
           </p>
-          <div class="text-sm font-bold text-brandPurple">כדי להפסיק לעדכן כמה מערכות ידנית.</div>
+          <div class="text-sm font-bold text-brandPurple">פחות כפילויות. יותר שליטה על מה שכבר קיים.</div>
         </div>
       </div>
     </div>
@@ -449,7 +473,7 @@
           אם יש אצלך בעסק עומס, ידני או מעקב שמתפספס, זה בדיוק השלב לבדוק מה נכון לבנות קודם.
         </h2>
         <p class="text-slate-500 text-sm md:text-base">
-          אפשר להשאיר פרטים או פשוט לפתוח שיחה בוואטסאפ.
+          אפשר להשאיר פרטים או פשוט לשלוח לי וואטסאפ.
         </p>
       </div>
 
@@ -460,9 +484,9 @@
               <span class="w-2.5 h-2.5 rounded-full bg-brandTeal"></span>
               שיחה ישירה
             </div>
-            <h3 class="text-2xl font-black">רוצה לדבר בלי לחכות?</h3>
+            <h3 class="text-2xl font-black">רוצה לבדוק התאמה?</h3>
             <p class="text-slate-300 leading-relaxed">
-             שלחי לי וואטסאפ וכתבי בקצרה מה הכי תקוע כרגע בעסק.
+              שלחי לי וואטסאפ וכתבי בקצרה מה הכי תקוע כרגע בעסק.
             </p>
           </div>
 
@@ -470,7 +494,7 @@
              target="_blank"
              rel="noopener noreferrer"
              class="w-full text-center bg-brandTeal hover:bg-brandTealHover text-pageDark font-extrabold py-4 px-6 rounded-2xl shadow-glow smooth-hover">
-            לפתיחת שיחה בוואטסאפ
+            לשליחת הודעה בוואטסאפ
           </a>
         </div>
 
