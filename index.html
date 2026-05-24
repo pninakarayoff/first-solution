@@ -11,14 +11,23 @@
       theme: {
         extend: {
           colors: {
-            brandPurple: '#1E1B4B',
-            brandTeal: '#0D9488',
-            brandTealHover: '#0F766E',
-            lightBg: '#F7F8FA',
-            textMain: '#0F172A'
+            pageDark: '#0B1020',
+            pageDarkSoft: '#12182B',
+            brandPurple: '#2A1E5C',
+            brandPurpleLight: '#6D5EF8',
+            brandTeal: '#12C7B7',
+            brandTealHover: '#0FAE9F',
+            lightBg: '#F8F9FC',
+            lightCard: '#FFFFFF',
+            textMain: '#0F172A',
+            textMuted: '#94A3B8'
           },
           fontFamily: {
             sans: ['Heebo', 'Assistant', 'sans-serif']
+          },
+          boxShadow: {
+            glow: '0 20px 60px rgba(18, 199, 183, 0.18)',
+            card: '0 20px 50px rgba(2, 6, 23, 0.08)'
           }
         }
       }
@@ -37,109 +46,208 @@
     }
 
     .smooth-hover {
-      transition: all 0.25s ease;
+      transition: all 0.28s ease;
+    }
+
+    .hero-glow::before {
+      content: "";
+      position: absolute;
+      inset: auto;
+      width: 26rem;
+      height: 26rem;
+      right: -8rem;
+      top: -8rem;
+      background: radial-gradient(circle, rgba(109,94,248,0.22) 0%, rgba(109,94,248,0) 65%);
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    .hero-glow::after {
+      content: "";
+      position: absolute;
+      width: 24rem;
+      height: 24rem;
+      left: -6rem;
+      bottom: -10rem;
+      background: radial-gradient(circle, rgba(18,199,183,0.18) 0%, rgba(18,199,183,0) 65%);
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    .grid-line {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    .glass-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.09);
     }
   </style>
 </head>
-<body class="selection:bg-brandTeal selection:text-white overflow-x-hidden antialiased">
+<body class="selection:bg-brandTeal selection:text-pageDark overflow-x-hidden antialiased">
 
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 py-4 px-6">
+  <header class="sticky top-0 z-50 bg-pageDark/90 backdrop-blur-md border-b border-white/10 py-4 px-6">
     <div class="max-w-6xl mx-auto flex justify-between items-center gap-4">
       <a href="#" class="flex items-center gap-3 shrink-0">
         <img src="LOGO%20AI%20ARCHITECT.png" alt="לוגו פנינה קריוף" class="h-12 w-auto object-contain" />
         <div class="hidden sm:flex flex-col items-start leading-tight">
-          <span class="text-sm font-black tracking-tight text-brandPurple">פנינה <span class="text-brandTeal">קריוף</span></span>
-          <span class="text-[10px] text-slate-500 font-medium tracking-wider uppercase">AI Systems Architect</span>
+          <span class="text-sm font-black tracking-tight text-white">פנינה <span class="text-brandTeal">קריוף</span></span>
+          <span class="text-[10px] text-slate-400 font-medium tracking-wider uppercase">AI Systems Architect</span>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-        <a href="#problem" class="hover:text-brandPurple smooth-hover">האתגר</a>
-        <a href="#about-service" class="hover:text-brandPurple smooth-hover">מה אני עושה</a>
-        <a href="#solutions-grid" class="hover:text-brandPurple smooth-hover">מה אפשר לבנות</a>
-        <a href="#methodology" class="hover:text-brandPurple smooth-hover">איך זה עובד</a>
-        <a href="#contact" class="hover:text-brandPurple smooth-hover">יצירת קשר</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#problem" class="hover:text-white smooth-hover">האתגר</a>
+        <a href="#about-service" class="hover:text-white smooth-hover">מה אני עושה</a>
+        <a href="#solutions-grid" class="hover:text-white smooth-hover">מה אפשר לבנות</a>
+        <a href="#methodology" class="hover:text-white smooth-hover">איך זה עובד</a>
+        <a href="#contact" class="hover:text-white smooth-hover">יצירת קשר</a>
       </nav>
 
-      <a href="https://wa.me/972548383451?text=%D7%94%D7%99%D7%99%20%D7%A4%D7%A0%D7%99%D7%A0%D7%94%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9C%D7%93%D7%A3%20%D7%A9%D7%9C%D7%9A%20%D7%91%D7%A0%D7%95%D7%A9%D7%90%20%D7%9E%D7%99%D7%A4%D7%95%D7%99%20%D7%95%D7%91%D7%A0%D7%99%D7%99%D7%AA%20%D7%A4%D7%AA%D7%A8%D7%95%D7%9F%20%D7%A8%D7%90%D7%A9%D7%95%D7%9F%20%D7%9C%D7%A2%D7%A1%D7%A7%2C%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%94%D7%AA%D7%90%D7%9E%D7%94%20%D7%9C%D7%A9%D7%99%D7%97%D7%AA%20%D7%90%D7%91%D7%97%D7%95%D7%9F.%20%D7%9B%D7%A8%D7%92%D7%A2%20%D7%9E%D7%94%20%D7%A9%D7%94%D7%9B%D7%99%20%D7%AA%D7%A7%D7%95%D7%A2%20%D7%90%D7%A6%D7%9C%D7%99%20%D7%91%D7%A2%D7%A1%D7%A7%20%D7%94%D7%95%D7%90%3A" target="_blank" rel="noopener noreferrer" class="bg-brandPurple text-white text-xs font-bold py-2.5 px-5 rounded-lg hover:bg-brandTeal smooth-hover inline-block shrink-0">
+      <a href="https://wa.me/972548383451?text=%D7%94%D7%99%D7%99%20%D7%A4%D7%A0%D7%99%D7%A0%D7%94%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9C%D7%93%D7%A3%20%D7%A9%D7%9C%D7%9A%20%D7%91%D7%A0%D7%95%D7%A9%D7%90%20%D7%9E%D7%99%D7%A4%D7%95%D7%99%20%D7%95%D7%91%D7%A0%D7%99%D7%99%D7%AA%20%D7%A4%D7%AA%D7%A8%D7%95%D7%9F%20%D7%A8%D7%90%D7%A9%D7%95%D7%9F%20%D7%9C%D7%A2%D7%A1%D7%A7%2C%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%94%D7%AA%D7%90%D7%9E%D7%94%20%D7%9C%D7%A9%D7%99%D7%97%D7%AA%20%D7%90%D7%91%D7%97%D7%95%D7%9F.%20%D7%9B%D7%A8%D7%92%D7%A2%20%D7%9E%D7%94%20%D7%A9%D7%94%D7%9B%D7%99%20%D7%AA%D7%A7%D7%95%D7%A2%20%D7%90%D7%A6%D7%9C%D7%99%20%D7%91%D7%A2%D7%A1%D7%A7%20%D7%94%D7%95%D7%90%3A"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="bg-brandTeal text-pageDark text-xs font-extrabold py-2.5 px-5 rounded-lg hover:bg-white smooth-hover inline-block shrink-0">
         לקביעת שיחת אבחון
       </a>
     </div>
   </header>
 
-  <section class="relative py-20 lg:py-28 px-6 overflow-hidden bg-gradient-to-b from-slate-50 to-white border-b border-slate-100">
-    <div class="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-brandTeal/5 blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-brandPurple/5 blur-3xl pointer-events-none"></div>
+  <section class="relative overflow-hidden bg-pageDark text-white hero-glow grid-line">
+    <div class="max-w-6xl mx-auto px-6 py-20 lg:py-28 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        <div class="space-y-8">
+          <span class="text-xs font-bold tracking-[0.25em] text-brandTeal uppercase bg-white/5 border border-white/10 px-4 py-2 rounded-full inline-block">
+            פתרון ראשון לעסקים פעילים
+          </span>
 
-    <div class="max-w-4xl mx-auto text-center relative z-10 space-y-8">
-      <span class="text-xs font-bold tracking-widest text-brandTeal uppercase bg-teal-50 border border-brandTeal/20 px-3 py-1.5 rounded-full inline-block">
-        פתרון ראשון לעסקים פעילים
-      </span>
+          <h1 class="text-4xl lg:text-6xl font-black leading-tight tracking-tight">
+            העסק עובד.<br>
+            <span class="text-brandTeal">התפעול לא תמיד עומד בקצב.</span>
+          </h1>
 
-      <h1 class="text-4xl lg:text-6xl font-black text-brandPurple leading-tight tracking-tight">
-        מפסיקים לבזבז זמן על עבודה ידנית.<br>
-        <span class="text-brandTeal">בונים פתרון ראשון שעושה סדר.</span>
-      </h1>
+          <p class="text-slate-300 text-lg lg:text-xl max-w-xl leading-relaxed">
+            אני מזהה איפה התהליך נתקע, איפה לידים ופניות נופלים בין הכיסאות, ואיפה עבודה ידנית מיותרת שוחקת את הזמן שלך. אחר כך אני בונה את הפתרון הראשון שהכי נכון לעסק עכשיו.
+          </p>
 
-      <p class="text-slate-600 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed font-light">
-        אני ממפה איפה התהליך בעסק נתקע, איפה דברים מתפספסים, ואיפה עבודה ידנית מיותרת שוחקת את הזמן שלך. אחר כך אני בונה פתרון ראשון, ממוקד ועובד בפועל.
-      </p>
+          <div class="flex flex-col sm:flex-row gap-4 pt-2">
+            <a href="#contact" class="w-full sm:w-auto text-center bg-brandTeal hover:bg-brandTealHover text-pageDark font-extrabold py-4 px-10 rounded-xl shadow-glow smooth-hover">
+              לבדוק התאמה לשיחת אבחון
+            </a>
+            <a href="#problem" class="w-full sm:w-auto text-center bg-white/5 border border-white/10 text-white font-medium py-4 px-8 rounded-xl hover:bg-white/10 smooth-hover">
+              לראות אם זה יושב על העסק שלי
+            </a>
+          </div>
 
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
-        <a href="https://wa.me/972548383451?text=%D7%94%D7%99%D7%99%20%D7%A4%D7%A0%D7%99%D7%A0%D7%94%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9C%D7%93%D7%A3%20%D7%A9%D7%9C%D7%9A%20%D7%91%D7%A0%D7%95%D7%A9%D7%90%20%D7%9E%D7%99%D7%A4%D7%95%D7%99%20%D7%95%D7%91%D7%A0%D7%99%D7%99%D7%AA%20%D7%A4%D7%AA%D7%A8%D7%95%D7%9F%20%D7%A8%D7%90%D7%A9%D7%95%D7%9F%20%D7%9C%D7%A2%D7%A1%D7%A7%2C%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%94%D7%AA%D7%90%D7%9E%D7%94%20%D7%9C%D7%A9%D7%99%D7%97%D7%AA%20%D7%90%D7%91%D7%97%D7%95%D7%9F.%20%D7%9B%D7%A8%D7%92%D7%A2%20%D7%9E%D7%94%20%D7%A9%D7%94%D7%9B%D7%99%20%D7%AA%D7%A7%D7%95%D7%A2%20%D7%90%D7%A6%D7%9C%D7%99%20%D7%91%D7%A2%D7%A1%D7%A7%20%D7%94%D7%95%D7%90%3A" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto text-center bg-brandTeal hover:bg-brandTealHover text-white font-bold py-4 px-10 rounded-xl shadow-lg shadow-brandTeal/10 smooth-hover">
-          לקביעת שיחת אבחון
-        </a>
-        <a href="#problem" class="w-full sm:w-auto text-center bg-white border border-slate-200 text-slate-700 font-medium py-4 px-8 rounded-xl hover:border-brandPurple hover:text-brandPurple smooth-hover">
-          לבדוק אם זה מתאים לעסק שלי
-        </a>
-      </div>
+          <div class="text-xs text-slate-400 font-medium">
+            מיועד לעסקים פעילים עם פעילות שוטפת, לקוחות קיימים ועומס תפעולי אמיתי.
+          </div>
+        </div>
 
-      <div class="text-xs text-slate-400 font-medium">
-        מיועד לעסקים פעילים עם פעילות שוטפת, לקוחות קיימים ועומס תפעולי אמיתי.
+        <div class="relative">
+          <div class="glass-card rounded-[28px] p-6 shadow-card">
+            <div class="rounded-2xl bg-pageDarkSoft border border-white/10 p-5 space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-bold text-white">זרימת עבודה חכמה</span>
+                <span class="text-xs text-brandTeal font-bold">LIVE</span>
+              </div>
+
+              <div class="space-y-3">
+                <div class="rounded-xl bg-white/5 border border-white/10 p-4 flex items-center justify-between">
+                  <div>
+                    <div class="text-sm font-bold text-white">פניות נכנסות</div>
+                    <div class="text-xs text-slate-400">דף נחיתה, וואטסאפ, מייל</div>
+                  </div>
+                  <div class="w-3 h-3 rounded-full bg-brandTeal"></div>
+                </div>
+
+                <div class="rounded-xl bg-white/5 border border-white/10 p-4 flex items-center justify-between">
+                  <div>
+                    <div class="text-sm font-bold text-white">מיון וסנכרון</div>
+                    <div class="text-xs text-slate-400">אוטומציה, טופס, גיליון, CRM</div>
+                  </div>
+                  <div class="w-3 h-3 rounded-full bg-brandPurpleLight"></div>
+                </div>
+
+                <div class="rounded-xl bg-white/5 border border-white/10 p-4 flex items-center justify-between">
+                  <div>
+                    <div class="text-sm font-bold text-white">שקט תפעולי</div>
+                    <div class="text-xs text-slate-400">פחות ידני, פחות פספוסים, יותר שליטה</div>
+                  </div>
+                  <div class="w-3 h-3 rounded-full bg-white"></div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-3 gap-3 pt-2">
+                <div class="rounded-xl bg-white/5 border border-white/10 p-3 text-center">
+                  <div class="text-xl font-black text-white">01</div>
+                  <div class="text-[11px] text-slate-400">זיהוי</div>
+                </div>
+                <div class="rounded-xl bg-white/5 border border-white/10 p-3 text-center">
+                  <div class="text-xl font-black text-white">02</div>
+                  <div class="text-[11px] text-slate-400">בנייה</div>
+                </div>
+                <div class="rounded-xl bg-white/5 border border-white/10 p-3 text-center">
+                  <div class="text-xl font-black text-white">03</div>
+                  <div class="text-[11px] text-slate-400">הטמעה</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-6 -left-4 hidden lg:block rounded-2xl bg-brandTeal text-pageDark px-5 py-4 shadow-glow">
+            <div class="text-xs font-bold">פחות ידני</div>
+            <div class="text-xs font-bold">יותר סדר</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="problem" class="py-20 px-6 bg-white">
+  <section id="problem" class="py-20 px-6 bg-lightBg">
     <div class="max-w-5xl mx-auto space-y-16">
       <div class="text-center max-w-2xl mx-auto space-y-4">
         <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">האתגר התפעולי</span>
-        <h2 class="text-3xl lg:text-4xl font-black text-brandPurple">
-          כשהעסק עובד, אבל מאחורי הקלעים הכול עדיין ידני
+        <h2 class="text-3xl lg:text-4xl font-black text-pageDark">
+          יש פעילות. יש לקוחות. ויש גם יותר מדי דברים שמוחזקים בראש.
         </h2>
         <p class="text-slate-500 text-sm md:text-base leading-relaxed">
-          הלידים מגיעים, העבודה זזה, אבל התפעול לא מחזיק את הקצב. במקום שליטה, יש רדיפה. במקום סדר, יש טלאים.
+          העסק עובד, אבל מאחורי הקלעים יש יותר מדי ידני, יותר מדי חזרתיות, ויותר מדי דברים שעלולים להתפספס.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4 hover:border-brandTeal/20 smooth-hover">
-          <div class="w-10 h-10 rounded-lg bg-teal-50 text-brandTeal flex items-center justify-center font-bold text-lg">⌛</div>
-          <h3 class="text-lg font-bold text-brandPurple">יותר מדי ידני</h3>
+        <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-card hover:-translate-y-1 smooth-hover">
+          <div class="w-11 h-11 rounded-2xl bg-brandTeal/10 text-brandTeal flex items-center justify-center font-bold text-lg mb-5">⌛</div>
+          <h3 class="text-xl font-bold text-pageDark mb-3">יותר מדי ידני</h3>
           <p class="text-slate-600 text-sm leading-relaxed">
-            העתקה והדבקה, עדכונים חוזרים, הודעות שגרתיות ומעקב ידני שגוזלים זמן בכל יום מחדש.
+            העתקה והדבקה, עדכונים חוזרים, שליחת הודעות שגרתיות ומעקב ידני שגוזלים זמן בכל יום מחדש.
           </p>
         </div>
 
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4 hover:border-brandTeal/20 smooth-hover">
-          <div class="w-10 h-10 rounded-lg bg-teal-50 text-brandTeal flex items-center justify-center font-bold text-lg">⚠️</div>
-          <h3 class="text-lg font-bold text-brandPurple">פניות שמתפספסות</h3>
+        <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-card hover:-translate-y-1 smooth-hover">
+          <div class="w-11 h-11 rounded-2xl bg-brandTeal/10 text-brandTeal flex items-center justify-center font-bold text-lg mb-5">⚠️</div>
+          <h3 class="text-xl font-bold text-pageDark mb-3">פניות שמתפספסות</h3>
           <p class="text-slate-600 text-sm leading-relaxed">
-            לידים נכנסים, אבל לא תמיד מטופלים בזמן. לפעמים הם נעלמים בין מיילים, וואטסאפ, גיליונות ומשימות.
+            לידים מגיעים, אבל לא תמיד מטופלים בזמן. לפעמים הם נעלמים בין מיילים, וואטסאפ, גיליונות ומשימות.
           </p>
         </div>
 
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4 hover:border-brandTeal/20 smooth-hover">
-          <div class="w-10 h-10 rounded-lg bg-teal-50 text-brandTeal flex items-center justify-center font-bold text-lg">🔗</div>
-          <h3 class="text-lg font-bold text-brandPurple">מערכות שלא מחוברות נכון</h3>
+        <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-card hover:-translate-y-1 smooth-hover">
+          <div class="w-11 h-11 rounded-2xl bg-brandTeal/10 text-brandTeal flex items-center justify-center font-bold text-lg mb-5">🔗</div>
+          <h3 class="text-xl font-bold text-pageDark mb-3">מערכות שלא מחוברות נכון</h3>
           <p class="text-slate-600 text-sm leading-relaxed">
             המידע יושב בכמה מקומות, אין זרימה מסודרת, וכל פעולה קטנה דורשת עוד טיפול ידני.
           </p>
         </div>
 
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4 hover:border-brandTeal/20 smooth-hover">
-          <div class="w-10 h-10 rounded-lg bg-teal-50 text-brandTeal flex items-center justify-center font-bold text-lg">📉</div>
-          <h3 class="text-lg font-bold text-brandPurple">חוסר שקט תפעולי</h3>
+        <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-card hover:-translate-y-1 smooth-hover">
+          <div class="w-11 h-11 rounded-2xl bg-brandTeal/10 text-brandTeal flex items-center justify-center font-bold text-lg mb-5">📉</div>
+          <h3 class="text-xl font-bold text-pageDark mb-3">חוסר שקט תפעולי</h3>
           <p class="text-slate-600 text-sm leading-relaxed">
             קשה לדעת מה קורה, מה סטטוס כל ליד, ומה נשאר פתוח. הכול נשען יותר מדי על זיכרון אנושי.
           </p>
@@ -148,128 +256,140 @@
     </div>
   </section>
 
-  <section id="about-service" class="py-20 px-6 bg-lightBg border-t border-b border-slate-100">
-    <div class="max-w-5xl mx-auto space-y-12">
-      <div class="text-center max-w-2xl mx-auto space-y-4">
-        <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">מהות השירות</span>
-        <h2 class="text-3xl lg:text-4xl font-black text-brandPurple">
-          אני לא מוכרת טכנולוגיה.<br>אני בונה לעסק שלך פתרון שעובד.
-        </h2>
-      </div>
+  <section id="about-service" class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="rounded-[32px] bg-pageDark text-white overflow-hidden shadow-card border border-white/5">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
+          <div class="p-8 md:p-12 lg:p-14 flex items-center">
+            <div class="space-y-7">
+              <span class="text-xs font-bold uppercase tracking-[0.22em] text-brandTeal">מהות השירות</span>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-white border border-slate-200/80 p-8 md:p-12 rounded-3xl shadow-sm">
-        <div class="order-2 lg:order-1 space-y-6 leading-relaxed">
-          <p class="text-lg text-brandPurple font-bold">
-            נעים להכיר, אני פנינה קריוף, ארכיטקטית מערכות AI ואוטומציה.
-          </p>
+              <h2 class="text-3xl lg:text-4xl font-black leading-tight">
+                אני לא מוכרת טכנולוגיה.<br>
+                אני בונה לעסק שלך פתרון שעובד.
+              </h2>
 
-          <p class="text-slate-600">
-            השירות הזה לא נועד להעמיס עלייך עוד כלי. הוא נועד לזהות איפה יש חיכוך, מה נשבר בתהליך, ומה הפתרון הראשון שהכי נכון לבנות עכשיו.
-          </p>
+              <p class="text-slate-300 leading-relaxed">
+                נעים להכיר, אני פנינה קריוף, ארכיטקטית מערכות AI ואוטומציה. השירות הזה לא נועד להעמיס עלייך עוד כלי. הוא נועד לזהות איפה יש חיכוך, מה נשבר בתהליך, ומה הפתרון הראשון שהכי נכון לבנות עכשיו.
+              </p>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-            <div class="flex gap-3 items-start">
-              <span class="text-brandTeal font-bold text-lg">✓</span>
-              <span class="text-slate-700 text-sm"><strong>מיפוי מדויק</strong> של צווארי הבקבוק, החזרתיות והעיכובים.</span>
-            </div>
-            <div class="flex gap-3 items-start">
-              <span class="text-brandTeal font-bold text-lg">✓</span>
-              <span class="text-slate-700 text-sm"><strong>הגדרת פתרון ראשון</strong> לפי מה שהעסק באמת צריך כרגע.</span>
-            </div>
-            <div class="flex gap-3 items-start">
-              <span class="text-brandTeal font-bold text-lg">✓</span>
-              <span class="text-slate-700 text-sm"><strong>בנייה בפועל</strong> של הפתרון עד שהוא עובד בצורה מסודרת.</span>
-            </div>
-            <div class="flex gap-3 items-start">
-              <span class="text-brandTeal font-bold text-lg">✓</span>
-              <span class="text-slate-700 text-sm"><strong>הטמעה בסיסית</strong> והסבר קצר כדי שתוכלי לעבוד איתו בביטחון.</span>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div class="rounded-2xl bg-white/5 border border-white/10 p-4">
+                  <div class="text-brandTeal font-black mb-2">מיפוי מדויק</div>
+                  <div class="text-sm text-slate-300">של צווארי הבקבוק, החזרתיות והעיכובים.</div>
+                </div>
+
+                <div class="rounded-2xl bg-white/5 border border-white/10 p-4">
+                  <div class="text-brandTeal font-black mb-2">פתרון ראשון</div>
+                  <div class="text-sm text-slate-300">לפי מה שהעסק באמת צריך כרגע.</div>
+                </div>
+
+                <div class="rounded-2xl bg-white/5 border border-white/10 p-4">
+                  <div class="text-brandTeal font-black mb-2">בנייה בפועל</div>
+                  <div class="text-sm text-slate-300">עד שהפתרון עובד בצורה מסודרת.</div>
+                </div>
+
+                <div class="rounded-2xl bg-white/5 border border-white/10 p-4">
+                  <div class="text-brandTeal font-black mb-2">הטמעה בסיסית</div>
+                  <div class="text-sm text-slate-300">והסבר קצר כדי שתוכלי לעבוד איתו בביטחון.</div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="order-1 lg:order-2 flex justify-center">
-          <img src="profile.png" alt="פנינה קריוף" class="w-full max-w-sm rounded-3xl object-cover shadow-lg shadow-slate-200" />
+          <div class="bg-gradient-to-br from-brandPurple to-pageDarkSoft p-8 md:p-12 flex items-center justify-center">
+            <div class="relative w-full max-w-sm">
+              <div class="absolute -inset-3 rounded-[30px] bg-gradient-to-br from-brandTeal/40 to-brandPurpleLight/20 blur-2xl opacity-80"></div>
+              <img src="profile.png" alt="פנינה קריוף" class="relative w-full rounded-[28px] object-cover border border-white/10 shadow-card" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="solutions-grid" class="py-20 px-6 bg-white">
-    <div class="max-w-5xl mx-auto space-y-16">
+  <section id="solutions-grid" class="py-20 px-6 bg-lightBg">
+    <div class="max-w-6xl mx-auto space-y-16">
       <div class="text-center max-w-2xl mx-auto space-y-4">
-        <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">מה אפשר לבנות בפועל</span>
-        <h2 class="text-3xl lg:text-4xl font-black text-brandPurple">
-          דוגמאות לפתרון ראשון
+        <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">מה אפשר לפתור כבר בשלב הראשון</span>
+        <h2 class="text-3xl lg:text-4xl font-black text-pageDark">
+          פתרונות שמחזירים סדר כבר מהצעד הראשון
         </h2>
         <p class="text-slate-500 text-sm md:text-base">
-          הפתרון נבחר לפי העסק שלך. הנה כמה דוגמאות נפוצות:
+          לא עוד רשימת יכולות. פתרון אחד מדויק, שמוריד חיכוך במקום שהכי כואב עכשיו.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="border border-slate-200 p-6 rounded-2xl bg-white space-y-4 hover:shadow-lg hover:border-brandTeal/30 smooth-hover flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="text-xs font-bold text-brandTeal tracking-wide font-mono uppercase">01</div>
-            <h4 class="text-base font-bold text-brandPurple">אוטומציית לידים ופניות</h4>
-            <p class="text-slate-500 text-sm leading-relaxed">
-              חיבור בין טופס, מייל, וואטסאפ או גיליון כדי שפניות יכנסו מסודר, יקבלו מענה ראשוני, ולא ילכו לאיבוד.
-            </p>
+        <div class="bg-white border border-slate-200 rounded-3xl p-7 shadow-card hover:-translate-y-1 smooth-hover">
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-xs font-black text-brandTeal tracking-[0.2em] uppercase">01</span>
+            <span class="w-10 h-10 rounded-2xl bg-brandTeal/10 text-brandTeal flex items-center justify-center">↗</span>
           </div>
+          <h4 class="text-xl font-bold text-pageDark mb-3">אוטומציית לידים ופניות</h4>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            חיבור בין טופס, מייל, וואטסאפ או גיליון כדי שפניות יכנסו מסודר, יקבלו מענה ראשוני, ולא ילכו לאיבוד.
+          </p>
+          <div class="text-sm font-bold text-brandPurple">כדי שלא יאבדו פניות בדרך.</div>
         </div>
 
-        <div class="border border-slate-200 p-6 rounded-2xl bg-white space-y-4 hover:shadow-lg hover:border-brandTeal/30 smooth-hover flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="text-xs font-bold text-brandTeal tracking-wide font-mono uppercase">02</div>
-            <h4 class="text-base font-bold text-brandPurple">טופס חכם לאיסוף נתונים</h4>
-            <p class="text-slate-500 text-sm leading-relaxed">
-              טופס שמסדר את המידע מראש, חוסך שיחות חוזרות, ומעביר את הנתונים ישירות למקום הנכון.
-            </p>
+        <div class="bg-white border border-slate-200 rounded-3xl p-7 shadow-card hover:-translate-y-1 smooth-hover">
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-xs font-black text-brandTeal tracking-[0.2em] uppercase">02</span>
+            <span class="w-10 h-10 rounded-2xl bg-brandTeal/10 text-brandTeal flex items-center justify-center">✦</span>
           </div>
+          <h4 class="text-xl font-bold text-pageDark mb-3">טופס חכם לאיסוף נתונים</h4>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            טופס שמסדר את המידע מראש, חוסך שיחות חוזרות, ומעביר את הנתונים ישירות למקום הנכון.
+          </p>
+          <div class="text-sm font-bold text-brandPurple">כדי להפסיק לרדוף אחרי מידע.</div>
         </div>
 
-        <div class="border border-slate-200 p-6 rounded-2xl bg-white space-y-4 hover:shadow-lg hover:border-brandTeal/30 smooth-hover flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="text-xs font-bold text-brandTeal tracking-wide font-mono uppercase">03</div>
-            <h4 class="text-base font-bold text-brandPurple">סנכרון תהליך קיים</h4>
-            <p class="text-slate-500 text-sm leading-relaxed">
-              חיבור בין כלים שכבר קיימים אצלך בעסק כדי להוריד הקלדה חוזרת, לצמצם טעויות ולייצר זרימה ברורה יותר.
-            </p>
+        <div class="bg-white border border-slate-200 rounded-3xl p-7 shadow-card hover:-translate-y-1 smooth-hover">
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-xs font-black text-brandTeal tracking-[0.2em] uppercase">03</span>
+            <span class="w-10 h-10 rounded-2xl bg-brandTeal/10 text-brandTeal flex items-center justify-center">⟲</span>
           </div>
+          <h4 class="text-xl font-bold text-pageDark mb-3">סנכרון תהליך קיים</h4>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            חיבור בין כלים שכבר קיימים אצלך בעסק כדי להוריד הקלדה חוזרת, לצמצם טעויות ולייצר זרימה ברורה יותר.
+          </p>
+          <div class="text-sm font-bold text-brandPurple">כדי להפסיק לעדכן כמה מערכות ידנית.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="methodology" class="py-20 px-6 bg-lightBg border-t border-b border-slate-100">
-    <div class="max-w-5xl mx-auto space-y-16">
+  <section id="methodology" class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto space-y-16">
       <div class="text-center max-w-2xl mx-auto space-y-4">
         <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">איך זה עובד</span>
-        <h2 class="text-3xl lg:text-4xl font-black text-brandPurple">
+        <h2 class="text-3xl lg:text-4xl font-black text-pageDark">
           שלושה שלבים ברורים
         </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm space-y-3">
-          <div class="text-5xl font-black text-slate-100">01</div>
-          <h4 class="text-lg font-bold text-brandPurple">מיפוי ואבחון</h4>
-          <p class="text-slate-600 text-sm leading-relaxed">
+        <div class="rounded-3xl bg-pageDark text-white p-8 border border-white/5 shadow-card">
+          <div class="text-5xl font-black text-white/10 mb-4">01</div>
+          <h4 class="text-xl font-bold mb-3">מיפוי ואבחון</h4>
+          <p class="text-slate-300 text-sm leading-relaxed">
             אני מזהה איפה התהליך נתקע, מה חוזר ידנית, ואיפה הכי נכון להתחיל.
           </p>
         </div>
 
-        <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm space-y-3">
-          <div class="text-5xl font-black text-slate-100">02</div>
-          <h4 class="text-lg font-bold text-brandPurple">בנייה והתאמה</h4>
-          <p class="text-slate-600 text-sm leading-relaxed">
+        <div class="rounded-3xl bg-brandPurple text-white p-8 border border-white/5 shadow-card">
+          <div class="text-5xl font-black text-white/10 mb-4">02</div>
+          <h4 class="text-xl font-bold mb-3">בנייה והתאמה</h4>
+          <p class="text-slate-200 text-sm leading-relaxed">
             אני בונה את הפתרון הראשון בפועל, מחברת, מגדירה ובודקת שהכול עובד כמו שצריך.
           </p>
         </div>
 
-        <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm space-y-3">
-          <div class="text-5xl font-black text-slate-100">03</div>
-          <h4 class="text-lg font-bold text-brandPurple">מסירה והטמעה</h4>
-          <p class="text-slate-600 text-sm leading-relaxed">
+        <div class="rounded-3xl bg-pageDarkSoft text-white p-8 border border-white/5 shadow-card">
+          <div class="text-5xl font-black text-white/10 mb-4">03</div>
+          <h4 class="text-xl font-bold mb-3">מסירה והטמעה</h4>
+          <p class="text-slate-300 text-sm leading-relaxed">
             את מקבלת פתרון פעיל, הסבר קצר, וסבב תיקונים אחד כדי להכניס אותו לעבודה.
           </p>
         </div>
@@ -277,19 +397,26 @@
     </div>
   </section>
 
-  <section class="py-20 px-6 bg-white">
-    <div class="max-w-5xl mx-auto space-y-16">
+  <section class="py-20 px-6 bg-pageDark text-white">
+    <div class="max-w-6xl mx-auto space-y-14">
       <div class="text-center max-w-2xl mx-auto space-y-4">
         <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">למי זה מתאים</span>
-        <h2 class="text-3xl lg:text-4xl font-black text-brandPurple">
-          מתאים לעסקים שכבר עובדים
+        <h2 class="text-3xl lg:text-4xl font-black">
+          לא לכל עסק. לעסקים שבאמת הגיע הזמן לעשות סדר.
         </h2>
+        <p class="text-slate-400 text-sm md:text-base">
+          זה לא שירות גנרי. זה פתרון ראשון לעסקים שכבר יש בהם פעילות, אבל התפעול כבר לא מחזיק את הקצב כמו שצריך.
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="border border-teal-100 bg-teal-50/30 p-8 rounded-2xl space-y-6">
-          <h4 class="text-lg font-bold text-brandTeal">זה מתאים אם:</h4>
-          <ul class="space-y-4 text-slate-700 text-sm leading-relaxed">
+        <div class="rounded-[28px] bg-white/5 border border-brandTeal/20 p-8 shadow-card">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-2xl bg-brandTeal text-pageDark flex items-center justify-center font-black">✓</div>
+            <h4 class="text-2xl font-black text-brandTeal">זה מתאים אם:</h4>
+          </div>
+
+          <ul class="space-y-4 text-slate-200 leading-relaxed">
             <li>יש לך עסק פעיל עם לקוחות ופעילות שוטפת.</li>
             <li>התפעול גוזל ממך יותר מדי זמן.</li>
             <li>יש תהליך מסורבל, ידני או לא מספיק מסודר.</li>
@@ -297,9 +424,13 @@
           </ul>
         </div>
 
-        <div class="border border-slate-200 bg-slate-50 p-8 rounded-2xl space-y-6">
-          <h4 class="text-lg font-bold text-slate-700">פחות מתאים אם:</h4>
-          <ul class="space-y-4 text-slate-600 text-sm leading-relaxed">
+        <div class="rounded-[28px] bg-white/5 border border-white/10 p-8 shadow-card">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-2xl bg-white/10 text-white flex items-center justify-center font-black">–</div>
+            <h4 class="text-2xl font-black text-white">פחות מתאים אם:</h4>
+          </div>
+
+          <ul class="space-y-4 text-slate-300 leading-relaxed">
             <li>העסק עדיין בשלב הקמה ראשוני מאוד.</li>
             <li>את מחפשת קורס או למידה עצמית.</li>
             <li>אין כרגע צורך אמיתי בסדר או התייעלות.</li>
@@ -310,33 +441,40 @@
     </div>
   </section>
 
-  <section id="contact" class="py-20 px-6 bg-lightBg border-t border-b border-slate-100">
-    <div class="max-w-3xl mx-auto space-y-10">
+  <section id="contact" class="py-20 px-6 bg-lightBg">
+    <div class="max-w-6xl mx-auto space-y-12">
       <div class="text-center max-w-2xl mx-auto space-y-4">
         <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">יצירת קשר</span>
-        <h2 class="text-3xl lg:text-4xl font-black text-brandPurple">
-          בואי נבדוק מה הפתרון הראשון שהכי נכון לעסק שלך
+        <h2 class="text-3xl lg:text-4xl font-black text-pageDark">
+          אם יש אצלך בעסק עומס, ידני או מעקב שמתפספס, זה בדיוק השלב לבדוק מה נכון לבנות קודם.
         </h2>
         <p class="text-slate-500 text-sm md:text-base">
-          אפשר להשאיר פרטים או פשוט לשלוח לי הודעה בוואטסאפ.
+          אפשר להשאיר פרטים או פשוט לפתוח שיחה בוואטסאפ.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white border border-slate-200 p-8 rounded-3xl shadow-sm flex flex-col justify-between gap-6">
-          <div class="space-y-3">
-            <h3 class="text-xl font-bold text-brandPurple">רוצה לדבר ישירות?</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              לחצי כאן לפתיחת הודעת וואטסאפ מוכנה, ותוכלי לכתוב לי בקצרה מה הכי תקוע כרגע בעסק.
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        <div class="rounded-[32px] bg-pageDark text-white p-8 md:p-10 shadow-card flex flex-col justify-between gap-8">
+          <div class="space-y-4">
+            <div class="inline-flex items-center gap-2 text-brandTeal font-bold text-sm">
+              <span class="w-2.5 h-2.5 rounded-full bg-brandTeal"></span>
+              שיחה ישירה
+            </div>
+            <h3 class="text-2xl font-black">רוצה לדבר בלי לחכות?</h3>
+            <p class="text-slate-300 leading-relaxed">
+              לחצי לפתיחת הודעת וואטסאפ מוכנה, והשלימי במשפט אחד מה הכי תקוע כרגע בעסק.
             </p>
           </div>
 
-          <a href="https://wa.me/972548383451?text=%D7%94%D7%99%D7%99%20%D7%A4%D7%A0%D7%99%D7%A0%D7%94%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9C%D7%93%D7%A3%20%D7%A9%D7%9C%D7%9A%20%D7%91%D7%A0%D7%95%D7%A9%D7%90%20%D7%9E%D7%99%D7%A4%D7%95%D7%99%20%D7%95%D7%91%D7%A0%D7%99%D7%99%D7%AA%20%D7%A4%D7%AA%D7%A8%D7%95%D7%9F%20%D7%A8%D7%90%D7%A9%D7%95%D7%9F%20%D7%9C%D7%A2%D7%A1%D7%A7%2C%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%94%D7%AA%D7%90%D7%9E%D7%94%20%D7%9C%D7%A9%D7%99%D7%97%D7%AA%20%D7%90%D7%91%D7%97%D7%95%D7%9F.%20%D7%9B%D7%A8%D7%92%D7%A2%20%D7%9E%D7%94%20%D7%A9%D7%94%D7%9B%D7%99%20%D7%AA%D7%A7%D7%95%D7%A2%20%D7%90%D7%A6%D7%9C%D7%99%20%D7%91%D7%A2%D7%A1%D7%A7%20%D7%94%D7%95%D7%90%3A" target="_blank" rel="noopener noreferrer" class="w-full text-center bg-brandTeal hover:bg-brandTealHover text-white font-bold py-4 px-6 rounded-xl shadow-md shadow-brandTeal/10 smooth-hover">
+          <a href="https://wa.me/972548383451?text=%D7%94%D7%99%D7%99%20%D7%A4%D7%A0%D7%99%D7%A0%D7%94%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9C%D7%93%D7%A3%20%D7%A9%D7%9C%D7%9A%20%D7%91%D7%A0%D7%95%D7%A9%D7%90%20%D7%9E%D7%99%D7%A4%D7%95%D7%99%20%D7%95%D7%91%D7%A0%D7%99%D7%99%D7%AA%20%D7%A4%D7%AA%D7%A8%D7%95%D7%9F%20%D7%A8%D7%90%D7%A9%D7%95%D7%9F%20%D7%9C%D7%A2%D7%A1%D7%A7%2C%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%94%D7%AA%D7%90%D7%9E%D7%94%20%D7%9C%D7%A9%D7%99%D7%97%D7%AA%20%D7%90%D7%91%D7%97%D7%95%D7%9F.%20%D7%9B%D7%A8%D7%92%D7%A2%20%D7%9E%D7%94%20%D7%A9%D7%94%D7%9B%D7%99%20%D7%AA%D7%A7%D7%95%D7%A2%20%D7%90%D7%A6%D7%9C%D7%99%20%D7%91%D7%A2%D7%A1%D7%A7%20%D7%94%D7%95%D7%90%3A"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="w-full text-center bg-brandTeal hover:bg-brandTealHover text-pageDark font-extrabold py-4 px-6 rounded-2xl shadow-glow smooth-hover">
             לפתיחת שיחה בוואטסאפ
           </a>
         </div>
 
-        <div class="bg-white border border-slate-200 p-8 md:p-10 rounded-3xl shadow-sm">
+        <div class="rounded-[32px] bg-white border border-slate-200 p-8 md:p-10 shadow-card">
           <div id="form-success" class="hidden mb-6 rounded-2xl bg-teal-50 border border-teal-200 p-4 text-sm text-brandTeal font-medium">
             תודה, הפרטים נשלחו בהצלחה. אחזור אלייך בהקדם.
           </div>
@@ -353,7 +491,7 @@
                 name="name"
                 required
                 placeholder="לדוגמה: ישראלה ישראלי"
-                class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
+                class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
               >
             </div>
 
@@ -364,7 +502,7 @@
                 name="phone"
                 required
                 placeholder="050-1234567"
-                class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
+                class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
               >
             </div>
 
@@ -375,7 +513,7 @@
                 name="email"
                 required
                 placeholder="office@business.co.il"
-                class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
+                class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
               >
             </div>
 
@@ -386,7 +524,7 @@
                 rows="4"
                 required
                 placeholder="כמה מילים על מה שמרגיש מסורבל, ידני או עמוס"
-                class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
+                class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
               ></textarea>
             </div>
 
@@ -395,7 +533,7 @@
             <button
               type="submit"
               id="submit-button"
-              class="w-full bg-brandPurple hover:bg-brandTeal text-white font-bold py-4 px-6 rounded-xl transition-all shadow-md shadow-brandPurple/10 mt-2"
+              class="w-full bg-pageDark hover:bg-brandPurple text-white font-bold py-4 px-6 rounded-2xl transition-all shadow-card mt-2"
             >
               לשליחת פרטים לשיחת אבחון
             </button>
@@ -405,7 +543,7 @@
     </div>
   </section>
 
-  <footer class="bg-slate-900 text-slate-400 py-12 px-6 text-center text-xs border-t border-slate-800">
+  <footer class="bg-pageDark text-slate-400 py-12 px-6 text-center text-xs border-t border-white/5">
     <div class="max-w-6xl mx-auto space-y-4">
       <img src="LOGO%20AI%20ARCHITECT.png" alt="לוגו פנינה קריוף" class="h-14 w-auto object-contain mx-auto opacity-95" />
       <p>© 2026 פנינה קריוף | AI Systems Architect. כל הזכויות שמורות.</p>
