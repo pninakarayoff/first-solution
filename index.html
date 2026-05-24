@@ -345,14 +345,13 @@
             משהו השתבש בשליחה. נסי שוב או שלחי לי הודעה בוואטסאפ.
           </div>
 
-          <form id="contact-form" class="space-y-4 text-right">
+          <form id="contact-form" action="https://formspree.io/f/mgoqzgvy" method="POST" class="space-y-4 text-right">
             <div>
               <label class="block text-xs font-bold text-slate-600 mb-1">שם מלא</label>
               <input
                 type="text"
                 name="name"
                 required
-                data-fs-field
                 placeholder="לדוגמה: ישראלה ישראלי"
                 class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
               >
@@ -364,7 +363,6 @@
                 type="tel"
                 name="phone"
                 required
-                data-fs-field
                 placeholder="050-1234567"
                 class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
               >
@@ -376,7 +374,6 @@
                 type="email"
                 name="email"
                 required
-                data-fs-field
                 placeholder="office@business.co.il"
                 class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
               >
@@ -388,7 +385,6 @@
                 name="message"
                 rows="4"
                 required
-                data-fs-field
                 placeholder="כמה מילים על מה שמרגיש מסורבל, ידני או עמוס"
                 class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
               ></textarea>
@@ -418,24 +414,44 @@
   </footer>
 
   <script>
-    window.formspree = window.formspree || function () {
-      (formspree.q = formspree.q || []).push(arguments);
-    };
+    const form = document.getElementById("contact-form");
+    const successBox = document.getElementById("form-success");
+    const errorBox = document.getElementById("form-error");
+    const submitButton = document.getElementById("submit-button");
 
-    formspree('initForm', {
-      formElement: '#contact-form',
-      formId: 'mgoqzgvy',
-      onSuccess: function () {
-        document.getElementById('form-success').classList.remove('hidden');
-        document.getElementById('form-error').classList.add('hidden');
-        document.getElementById('contact-form').reset();
-      },
-      onError: function () {
-        document.getElementById('form-error').classList.remove('hidden');
-        document.getElementById('form-success').classList.add('hidden');
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      successBox.classList.add("hidden");
+      errorBox.classList.add("hidden");
+      submitButton.disabled = true;
+      submitButton.textContent = "שולחת...";
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        if (response.ok) {
+          form.reset();
+          successBox.classList.remove("hidden");
+          successBox.scrollIntoView({ behavior: "smooth", block: "center" });
+        } else {
+          errorBox.classList.remove("hidden");
+        }
+      } catch (error) {
+        errorBox.classList.remove("hidden");
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "לשליחת פרטים לשיחת אבחון";
       }
     });
   </script>
-  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
