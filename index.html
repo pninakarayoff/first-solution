@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מיפוי ובניית פתרון תפעולי ראשון לעסק | פנינה Karayoff</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepIndigo: '#0B0F19', // סגול-כחול עמוק מאוד לכותרות כהות
+                        brandPurple: '#1E1B4B', // סגול עמוק מלכותי
+                        brandTeal: '#0D9488', // טורקיז סמכותי ומעורר אמון
+                        brandTealHover: '#0F766E', // טורקיז כהה יותר לכפתורים
+                        brandBlue: '#1E3A8A', // כחול עמוק עסקי
+                        lightBg: '#F8FAFC', // רקע אפור בהיר מאוד ונקי
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'Assistant', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom Style Variables for Smooth Visual Integrity -->
+    <style>
+        body {
+            font-family: 'Heebo', 'Assistant', sans-serif;
+            background-color: #FFFFFF;
+            color: #1E293B;
+        }
+        
+        /* Subtle transition controls */
+        .smooth-hover {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        /* Interactive grid dot background for visual flow */
+        .dot-grid-bg {
+            background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="selection:bg-brandTeal selection:text-white overflow-x-hidden antialiased">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 py-4 px-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex flex-col items-start">
+                <span class="text-lg font-black tracking-tight text-brandPurple">
+                    פנינה <span class="text-brandTeal">Karayoff</span>
+                </span>
+                <span class="text-[10px] text-slate-500 font-medium tracking-wider uppercase">
+                    AI Systems Architect
+                </span>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#problem" class="hover:text-brandPurple smooth-hover">האתגר התפעולי</a>
+                <a href="#about-service" class="hover:text-brandPurple smooth-hover">מהות השירות</a>
+                <a href="#solutions-grid" class="hover:text-brandPurple smooth-hover">מה בונים בפועל</a>
+                <a href="#methodology" class="hover:text-brandPurple smooth-hover">תהליך העבודה</a>
+                <a href="#suitability" class="hover:text-brandPurple smooth-hover">התאמה לעסק</a>
+            </nav>
+
+            <div>
+                <a href="#diagnostic-wizard" class="bg-brandPurple text-white text-xs font-bold py-2.5 px-5 rounded-lg hover:bg-brandTeal smooth-hover inline-block">
+                    בדיקת התאמה מהירה
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative py-20 lg:py-28 px-6 overflow-hidden bg-gradient-to-b from-slate-50 to-white border-b border-slate-100">
+        <!-- Elegant subtle data-flow background decoration -->
+        <div class="absolute inset-0 dot-grid-bg opacity-30 pointer-events-none"></div>
+        <div class="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-brandTeal/5 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-brandPurple/5 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10 space-y-8">
+            <span class="text-xs font-bold tracking-widest text-brandTeal uppercase bg-teal-50 border border-brandTeal/20 px-3 py-1.5 rounded-full inline-block">
+                אופטימיזציה ותשתיות תפעול לעסקים פעילים
+            </span>
+            
+            <h1 class="text-4xl lg:text-6xl font-black text-brandPurple leading-tight tracking-tight">
+                מפסיקים לבזבז זמן על עבודה ידנית.<br>
+                <span class="text-brandTeal">בונים את הפתרון שיעשה לכם סדר.</span>
+            </h1>
+            
+            <p class="text-slate-600 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed font-light">
+                מיפוי מדויק של צווארי הבקבוק בעסק שלך ובניית פתרון ראשון, ממוקד ועובד בפועל. בלי מערכות מורכבות מדי, בלי פילוסופיות ובלי תיאוריות – רק תהליכים נקיים שמפנים לך זמן עבודה יקר.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+                <a href="#diagnostic-wizard" class="w-full sm:w-auto text-center bg-brandTeal hover:bg-brandTealHover text-white font-bold py-4 px-10 rounded-xl shadow-lg shadow-brandTeal/10 smooth-hover">
+                    לבדיקת התאמה ושיחת אבחון ←
+                </a>
+                <a href="#problem" class="w-full sm:w-auto text-center bg-white border border-slate-200 text-slate-700 font-medium py-4 px-8 rounded-xl hover:border-brandPurple hover:text-brandPurple smooth-hover">
+                    האם העסק שלך חווה את זה?
+                </a>
+            </div>
+            
+            <div class="text-xs text-slate-400 font-medium">
+                * מיועד לעסקים פעילים בעלי תזרים ולקוחות קיימים בלבד.
+            </div>
+        </div>
+
+        <!-- visual mapping simulation: interactive representation of flow and connection -->
+        <div class="max-w-2xl mx-auto mt-16 bg-white border border-slate-200/80 p-6 rounded-2xl shadow-xl shadow-slate-100 relative">
+            <div class="absolute -top-3 right-4 px-3 py-0.5 bg-brandPurple border border-brandPurple text-[10px] text-white font-mono rounded-full uppercase tracking-wider">
+                זרימת נתונים בעסק: לחיצה על נקודה מסנכרנת את המערכת
+            </div>
+            
+            <!-- Dynamic interactive connection map -->
+            <div class="relative h-28 bg-slate-50 rounded-xl overflow-hidden border border-slate-100 flex items-center justify-between px-8 md:px-16">
+                <!-- SVG Connector lines dynamically managed -->
+                <svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12%" y1="50%" x2="38%" y2="50%" stroke="#E2E8F0" stroke-width="2" id="conn-line-1" class="smooth-hover" />
+                    <line x1="38%" y1="50%" x2="62%" y2="50%" stroke="#E2E8F0" stroke-width="2" id="conn-line-2" class="smooth-hover" />
+                    <line x1="62%" y1="50%" x2="88%" y2="50%" stroke="#E2E8F0" stroke-width="2" id="conn-line-3" class="smooth-hover" />
+                </svg>
+
+                <!-- Step Nodes -->
+                <div onclick="activateSimulationNode(1)" id="sim-node-1" class="relative z-10 flex flex-col items-center cursor-pointer group">
+                    <div class="w-10 h-10 rounded-full bg-white border-2 border-slate-300 text-slate-400 flex items-center justify-center font-bold text-xs group-hover:border-brandPurple group-hover:text-brandPurple smooth-hover shadow-sm">
+                        📨
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-500 mt-2">פניות נכנסות</span>
+                </div>
+
+                <div onclick="activateSimulationNode(2)" id="sim-node-2" class="relative z-10 flex flex-col items-center cursor-pointer group">
+                    <div class="w-10 h-10 rounded-full bg-white border-2 border-slate-300 text-slate-400 flex items-center justify-center font-bold text-xs group-hover:border-brandPurple group-hover:text-brandPurple smooth-hover shadow-sm">
+                        ⚙️
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-500 mt-2">סנכרון תהליכים</span>
+                </div>
+
+                <div onclick="activateSimulationNode(3)" id="sim-node-3" class="relative z-10 flex flex-col items-center cursor-pointer group">
+                    <div class="w-10 h-10 rounded-full bg-white border-2 border-slate-300 text-slate-400 flex items-center justify-center font-bold text-xs group-hover:border-brandPurple group-hover:text-brandPurple smooth-hover shadow-sm">
+                        📊
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-500 mt-2">בסיס נתונים</span>
+                </div>
+
+                <div onclick="activateSimulationNode(4)" id="sim-node-4" class="relative z-10 flex flex-col items-center cursor-pointer group">
+                    <div class="w-10 h-10 rounded-full bg-white border-2 border-slate-300 text-slate-400 flex items-center justify-center font-bold text-xs group-hover:border-brandPurple group-hover:text-brandPurple smooth-hover shadow-sm">
+                        ✅
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-500 mt-2">שקט תפעולי</span>
+                </div>
+            </div>
+            
+            <p class="text-center text-xs text-slate-400 italic mt-3" id="sim-feedback-text">
+                לחצו על נקודות הקצה כדי לראות סנכרון וחיבור בין מערכות
+            </p>
+        </div>
+    </section>
+
+    <section id="problem" class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto space-y-16">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">הסימפטום והכאב התפעולי</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-brandPurple">
+                    כשהשיווק גדל, אבל התפעול מאחורי הקלעים נשאר מאחור
+                </h2>
+                <p class="text-slate-500 text-sm md:text-base leading-relaxed">
+                    הלקוחות מתחילים להגיע, הפעילות רצה והתזרים קיים – אבל בתוך המשרד הכל מתנהל כמו כיבוי שריפות יומיומי. במקום להרים את הראש ולחשוב על פיתוח עסקי, אתם משועבדים למשימות שלא אמורות לקחת זמן.
+                </p>
+            </div>
+
+            <!-- Grid of 4 clear pain boxes -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4 hover:border-brandTeal/20 smooth-hover">
+                    <div class="w-10 h-10 rounded-lg bg-teal-50 text-brandTeal flex items-center justify-center font-bold text-lg">
+                        ⌛
+                    </div>
+                    <h3 class="text-lg font-bold text-brandPurple">עבודה ידנית סיזיפית ומייגעת</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        מנהלים או עובדים שעות ארוכות בהעתקה והדבקה של נתונים ממקום למקום, עדכוני אקסל ידניים, שליחת הודעות וואטסאפ או מיילים שגרתיים שחוזרים על עצמם פעם אחר פעם.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4 hover:border-brandTeal/20 smooth-hover">
+                    <div class="w-10 h-10 rounded-lg bg-teal-50 text-brandTeal flex items-center justify-center font-bold text-lg">
+                        ⚠️
+                    </div>
+                    <h3 class="text-lg font-bold text-brandPurple">פניות ולידים חדשים שפשוט מתפספסים</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        פניות שמגיעות מהאתר או מהרשתות החברתיות לא מטופלות תוך דקות ספורות. הן הולכות לאיבוד בתוך הרעש בתיבת המייל או בשיחות וואטסאפ אישיות, ומייצרות אובדן הכנסה מיידי.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4 hover:border-brandTeal/20 smooth-hover">
+                    <div class="w-10 h-10 rounded-lg bg-teal-50 text-brandTeal flex items-center justify-center font-bold text-lg">
+                        🔗
+                    </div>
+                    <h3 class="text-lg font-bold text-brandPurple">המערכות שלכם לא מדברות אחת עם השנייה</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        הליד מנוהל במקום אחד, החשבוניות נשלחות ממערכת שנייה, הטיפול בלקוח נעשה בגיליון נפרד וניהול המשימות קורה בראש שלכם. אין תיאום, אין סנכרון, יש בעיקר תסכול.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4 hover:border-brandTeal/20 smooth-hover">
+                    <div class="w-10 h-10 rounded-lg bg-teal-50 text-brandTeal flex items-center justify-center font-bold text-lg">
+                        📉
+                    </div>
+                    <h3 class="text-lg font-bold text-brandPurple">תחושת אובדן שליטה וחוסר שקט</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        קשה לכם לדעת בוודאות מה קורה עם כל לקוח בכל רגע נתון. העסק תלוי לחלוטין בזיכרון האנושי שלכם, מה שמייצר חרדה קבועה מתקלות או חוסר סדר שמזיק למוניטין שלכם.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about-service" class="py-20 px-6 bg-slate-50 border-t border-b border-slate-100">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">התשובה לתסכול התפעולי</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-brandPurple">
+                    אני לא מוכרת טכנולוגיה.<br>אני בונה לעסק שלכם פתרון שעובד.
+                </h2>
+            </div>
+
+            <div class="bg-white border border-slate-200/80 p-8 md:p-12 rounded-3xl shadow-sm space-y-6 leading-relaxed">
+                <p class="text-lg text-brandPurple font-bold">
+                    נעים להכיר, אני פנינה Karayoff – ארכיטקטית מערכות AI ואוטומציה.
+                </p>
+                
+                <p class="text-slate-600">
+                    אני רואה עשרות מנהלים שרוכשים כלים יקרים, קורסים דיגיטליים או מערכות מתוחכמות, רק כדי לגלות שנוסף להם עוד כלי לנהל – והבלגן נשאר אותו בלגן. 
+                </p>
+                
+                <p class="text-slate-600">
+                    השירות שלי שונה לחלוטין. הוא לא ייעוץ תיאורטי ולא בנייה של מערכות מורכבות מדי. זהו תהליך ממוקד שבו אני:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                    <div class="flex gap-3 items-start">
+                        <span class="text-brandTeal font-bold text-lg">✓</span>
+                        <span class="text-slate-700 text-sm"><strong>ממפה ומנתחת</strong> איפה בדיוק התהליך שלכם נשבר ואיפה אתם מאבדים זמן עבודה יקר.</span>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <span class="text-brandTeal font-bold text-lg">✓</span>
+                        <span class="text-slate-700 text-sm"><strong>מזהה את צווארי הבקבוק</strong> שחונקים את הגדילה של העסק (בין אם זה בלידים, בתקשורת או במעקב).</span>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <span class="text-brandTeal font-bold text-lg">✓</span>
+                        <span class="text-slate-700 text-sm"><strong>מגדירה את הפתרון הראשון</strong> המדויק והפשוט ביותר שהכי נכון וקריטי לבנות כעת.</span>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <span class="text-brandTeal font-bold text-lg">✓</span>
+                        <span class="text-slate-700 text-sm"><strong>בונה אותו בפועל מאפס</strong> עבורכם עד שהוא עובד ומסונכרן בצורה חלקה ויציבה.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions-grid" class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto space-y-16">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">פתרון מוחשי בשטח</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-brandPurple">
+                    מהו הפתרון הראשון שנוכל לבנות עבורכם?
+                </h2>
+                <p class="text-slate-500 text-sm md:text-base">
+                    הפתרון תמיד נבחר ומותאם לנקודת הכאב הספציפית שלכם. הנה דוגמאות לפתרונות ממוקדים שעושים סדר מיידי ויציב:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Solution 1 -->
+                <div class="border border-slate-200 p-6 rounded-2xl bg-white space-y-4 hover:shadow-lg hover:border-brandTeal/30 smooth-hover flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-xs font-bold text-brandTeal tracking-wide font-mono uppercase">01 // זרימת פניות</div>
+                        <h4 class="text-base font-bold text-brandPurple">אוטומציית לידים ופניות נכנסות</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed">
+                            חיבור מיידי ואוטומטי בין כל מקורות הגעת הפניות (דף נחיתה, רשתות חברתיות, מייל) ישירות למערכת מעקב ולשליחת הודעת וואטסאפ ראשונית תוך שניות בודדות, כדי שאף ליד לא יתקרר או יתפספס.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-100 text-[11px] font-bold text-brandPurple flex items-center justify-between">
+                        <span>משך הטמעה: מהיר</span>
+                        <span>שקט תפעולי מיידי</span>
+                    </div>
+                </div>
+
+                <!-- Solution 2 -->
+                <div class="border border-slate-200 p-6 rounded-2xl bg-white space-y-4 hover:shadow-lg hover:border-brandTeal/30 smooth-hover flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-xs font-bold text-brandTeal tracking-wide font-mono uppercase">02 // איסוף חכם</div>
+                        <h4 class="text-base font-bold text-brandPurple">טפסים חכמים לאפיון ואיסוף נתונים</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed">
+                            במקום שיחות טלפון אינסופיות כדי לקבל פרטים מהלקוח, אנו בונים טופס דינמי מותאם אישית שמלקט את המידע ומנתב אותו אוטומטית למשימות, ליומן או לגיליונות העבודה בצורה מסודרת ללא מגע יד אדם.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-100 text-[11px] font-bold text-brandPurple flex items-center justify-between">
+                        <span>משך הטמעה: ממוקד</span>
+                        <span>מינימום שיחות אפיון</span>
+                    </div>
+                </div>
+
+                <!-- Solution 3 -->
+                <div class="border border-slate-200 p-6 rounded-2xl bg-white space-y-4 hover:shadow-lg hover:border-brandTeal/30 smooth-hover flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-xs font-bold text-brandTeal tracking-wide font-mono uppercase">03 // סנכרון מערכות</div>
+                        <h4 class="text-base font-bold text-brandPurple">סנכרון מלא בין יומנים, מיילים וגיליונות</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            חיבור תהליכי עבודה קבועים וחוזרים בעסק (לדוגמה: תזמון פגישות, שליחת סיכומים ועדכון טבלאות) כדי שכל המידע ישמר במקום אחד מרכזי, ללא צורך בהקלדה חוזרת או העתק-הדבק ידני ששוחק את המיקוד שלכם.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-100 text-[11px] font-bold text-brandPurple flex items-center justify-between">
+                        <span>משך הטמעה: יסודי</span>
+                        <span>אפס שגיאות אנוש</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="methodology" class="py-20 px-6 bg-slate-50 border-t border-b border-slate-100">
+        <div class="max-w-5xl mx-auto space-y-16">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">התוכנית המעשית</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-brandPurple">
+                    שלושה שלבים ברורים בדרך לשקט תפעולי
+                </h2>
+                <p class="text-slate-500 text-sm md:text-base">
+                    אני מאמינה בתהליך עבודה חד, ממוקד ושקוף שאינו דורש מכם שום הבנה או התעסקות טכנית מורכבת:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                
+                <!-- Step 1 -->
+                <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm relative overflow-hidden group hover:border-brandTeal smooth-hover">
+                    <span class="absolute top-2 left-4 text-7xl font-black text-slate-100 group-hover:text-teal-50/50 smooth-hover font-mono select-none">01</span>
+                    <div class="relative z-10 space-y-3 pt-6">
+                        <h4 class="text-lg font-bold text-brandPurple">שלב 1: מיפוי ואבחון מהיר</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            אנו מנתחים וממפים את זרימת המידע הנוכחית שלכם, מבינים איפה התהליך מאט או נתקע וקובעים ביחד מהו הפתרון התפעולי הראשון שהכי דחוף להטמיע בעסק.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm relative overflow-hidden group hover:border-brandTeal smooth-hover">
+                    <span class="absolute top-2 left-4 text-7xl font-black text-slate-100 group-hover:text-teal-50/50 smooth-hover font-mono select-none">02</span>
+                    <div class="relative z-10 space-y-3 pt-6">
+                        <h4 class="text-lg font-bold text-brandPurple">שלב 2: בנייה והתאמה בפועל</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            אני ניגשת לעבודה ובונה את הפתרון עבורכם – מחיבורי המערכות, הגדרת האוטומציות והזנת התהליכים ועד לבדיקת יציבות מלאה של המערכת בשטח.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm relative overflow-hidden group hover:border-brandTeal smooth-hover">
+                    <span class="absolute top-2 left-4 text-7xl font-black text-slate-100 group-hover:text-teal-50/50 smooth-hover font-mono select-none">03</span>
+                    <div class="relative z-10 space-y-3 pt-6">
+                        <h4 class="text-lg font-bold text-brandPurple">שלב 3: מסירה, הדרכה ושליטה</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            קבלת פתרון מוכן לעבודה מלאה, כולל סרטון הדרכה קצר המפרט את אופן השימוש, כדי שתוכלו להוביל ולנהל את המערכת בעצמכם בקלות ובראש שקט.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="suitability" class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto space-y-16">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">סינון והתאמה הדדית</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-brandPurple">
+                    האם הפתרון הזה מתאים בדיוק לעסק שלכם?
+                </h2>
+                <p class="text-slate-500 text-sm md:text-base">
+                    כדי להבטיח תוצאות יוצאות דופן ויעילות מקסימלית, אני עובדת אך ורק עם עסקים שיש לי את הביטחון המלא שאוכל לחסוך להם זמן משמעותי ולשפר את התפעול שלהם בפועל:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Category 1: Fit -->
+                <div class="border border-teal-100 bg-teal-50/30 p-8 rounded-2xl space-y-6">
+                    <h4 class="text-lg font-bold text-brandTeal flex items-center gap-2">
+                        <span class="flex items-center justify-center w-6 h-6 rounded-full bg-brandTeal text-white text-xs">✓</span>
+                        זהו השירות המדויק עבורכם אם:
+                    </h4>
+                    <ul class="space-y-4 text-slate-700 text-sm leading-relaxed">
+                        <li class="flex items-start gap-3">
+                            <span class="text-brandTeal text-lg">•</span>
+                            <span>יש לכם עסק פעיל עם לקוחות, פעילות רצה ותזרים שוטף קבוע.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-brandTeal text-lg">•</span>
+                            <span>אתם מרגישים שהתפעול והעבודה הידנית חונקים את הזמן והצמיחה העסקית שלכם.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-brandTeal text-lg">•</span>
+                            <span>אתם מבינים את ערך הזמן שלכם כמנהלים ומחפשים להשקיע בבניית תשתית יציבה ורגועה.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-brandTeal text-lg">•</span>
+                            <span>אתם מחפשים שותפה מקצועית שתנהל את הפתרון עבורכם ולא רק כותב קוד זמני.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Category 2: Unfit -->
+                <div class="border border-slate-200 bg-slate-50 p-8 rounded-2xl space-y-6 opacity-80">
+                    <h4 class="text-lg font-bold text-slate-600 flex items-center gap-2">
+                        <span class="flex items-center justify-center w-6 h-6 rounded-full bg-slate-400 text-white text-xs">-</span>
+                        השירות פחות יתאים לכם בשלב זה אם:
+                    </h4>
+                    <ul class="space-y-4 text-slate-500 text-sm leading-relaxed">
+                        <li class="flex items-start gap-3">
+                            <span class="text-slate-400 text-lg">•</span>
+                            <span>העסק נמצא בשלבי הקמה התחלתיים מאוד ללא פעילות אמיתית או לקוחות קיימים.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-slate-400 text-lg">•</span>
+                            <span>אתם מחפשים הדרכה, קורסים דיגיטליים או רוצים ללמוד איך לעשות זאת בעצמכם.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-slate-400 text-lg">•</span>
+                            <span>אתם מחפשים פתרונות חינמיים לחלוטין או "טלאים" ארעיים שלא מחזיקים מעמד.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-slate-400 text-lg">•</span>
+                            <span>אין לכם סבלנות לאפיין את התהליך ואתם מצפים למערכת מוכנה ללא שיתוף פעולה.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="diagnostic-wizard" class="py-20 px-6 bg-slate-50 border-t border-b border-slate-100">
+        <div class="max-w-3xl mx-auto space-y-12">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">בדיקה עצמית מהירה</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-brandPurple">
+                    בואו נבדוק התאמה ונזהה את הפתרון הראשון שלכם
+                </h2>
+                <p class="text-slate-500 text-sm md:text-base">
+                    ענו על 3 שאלות קצרות וקבלו אבחון ראשוני מיידי לגבי צוואר הבקבוק המרכזי בעסק שלכם.
+                </p>
+            </div>
+
+            <!-- Wizard Card Container -->
+            <div class="bg-white border border-slate-200 p-8 md:p-10 rounded-3xl shadow-lg relative">
+                
+                <!-- Progress Line Indicator -->
+                <div class="w-full bg-slate-100 rounded-full h-1.5 mb-8 overflow-hidden">
+                    <div id="wizard-progress-bar" class="bg-brandTeal h-1.5 w-1/3 transition-all duration-500"></div>
+                </div>
+
+                <!-- Quiz Step 1 -->
+                <div id="quiz-step-1" class="quiz-step space-y-6">
+                    <span class="text-xs font-bold text-brandTeal font-mono">שאלה 1 מתוך 3</span>
+                    <h3 class="text-lg font-bold text-brandPurple">מהו המצב הנוכחי של הפעילות העסקית שלכם?</h3>
+                    <div class="grid grid-cols-1 gap-4">
+                        <button onclick="navigateQuiz(2, true)" class="w-full text-right p-4 rounded-xl border border-slate-200 hover:border-brandTeal hover:bg-slate-50 smooth-hover flex flex-col justify-start">
+                            <span class="font-bold text-brandPurple text-sm">עסק פעיל ויציב</span>
+                            <span class="text-slate-500 text-xs mt-1">יש לנו לקוחות קבועים, פעילות שרצה בשוטף ותזרים עבודה קבוע.</span>
+                        </button>
+                        <button onclick="navigateQuiz(2, false)" class="w-full text-right p-4 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 smooth-hover flex flex-col justify-start">
+                            <span class="font-bold text-slate-500 text-sm">עסק בשלבי הקמה ראשוניים</span>
+                            <span class="text-slate-400 text-xs mt-1">אנחנו עדיין מגבשים את השירותים ואין לנו תזרים לקוחות פעיל כרגע.</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Step 2 -->
+                <div id="quiz-step-2" class="quiz-step hidden space-y-6">
+                    <span class="text-xs font-bold text-brandTeal font-mono">שאלה 2 מתוך 3</span>
+                    <h3 class="text-lg font-bold text-brandPurple">היכן אתם מרגישים את צוואר הבקבוק הכי מתסכל בעסק?</h3>
+                    <div class="grid grid-cols-1 gap-3">
+                        <button onclick="navigateQuiz(3, null)" class="w-full text-right p-4 rounded-xl border border-slate-200 hover:border-brandTeal hover:bg-slate-50 smooth-hover flex flex-col justify-start">
+                            <span class="font-bold text-brandPurple text-sm">עבודה ידנית סיזיפית</span>
+                            <span class="text-slate-500 text-xs mt-1">העתקה והדבקה של נתונים, עדכוני גיליונות ושליחת הודעות שגרתיות חוזרות.</span>
+                        </button>
+                        <button onclick="navigateQuiz(3, null)" class="w-full text-right p-4 rounded-xl border border-slate-200 hover:border-brandTeal hover:bg-slate-50 smooth-hover flex flex-col justify-start">
+                            <span class="font-bold text-brandPurple text-sm">לידים ופניות שנופלים בין הכיסאות</span>
+                            <span class="text-slate-500 text-xs mt-1">לידים חדשים שמגיעים ולא מקבלים מענה מהיר או הולכים לאיבוד ברעש.</span>
+                        </button>
+                        <button onclick="navigateQuiz(3, null)" class="w-full text-right p-4 rounded-xl border border-slate-200 hover:border-brandTeal hover:bg-slate-50 smooth-hover flex flex-col justify-start">
+                            <span class="font-bold text-brandPurple text-sm">מערכות מנותקות שלא מדברות אחת עם השנייה</span>
+                            <span class="text-slate-500 text-xs mt-1">חוסר תיאום בין המייל, היומן, ה-CRM ומערכות החשבוניות.</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Step 3 -->
+                <div id="quiz-step-3" class="quiz-step hidden space-y-6">
+                    <span class="text-xs font-bold text-brandTeal font-mono">שאלה 3 מתוך 3</span>
+                    <h3 class="text-lg font-bold text-brandPurple">מהי התוצאה המרכזית שהכי חשוב לכם להשיג מהפתרון?</h3>
+                    <div class="grid grid-cols-1 gap-4">
+                        <button onclick="processResult(true)" class="w-full text-right p-4 rounded-xl border border-slate-200 hover:border-brandTeal hover:bg-slate-50 smooth-hover flex flex-col justify-start">
+                            <span class="font-bold text-brandPurple text-sm">חיסכון זמן עבודה משמעותי ושקט תפעולי</span>
+                            <span class="text-slate-500 text-xs mt-1">לפנות לפחות חצי יום בשבוע כדי להתמקד בפיתוח עסקי והגדלת רווחים.</span>
+                        </button>
+                        <button onclick="processResult(true)" class="w-full text-right p-4 rounded-xl border border-slate-200 hover:border-brandTeal hover:bg-slate-50 smooth-hover flex flex-col justify-start">
+                            <span class="font-bold text-brandPurple text-sm">סדר מוחלט וביטחון מלא בתהליכי העבודה</span>
+                            <span class="text-slate-500 text-xs mt-1">לדעת בכל רגע מה סטטוס כל משימה ולקוח ללא ניחושים או חרדות.</span>
+                        </button>
+                        <button onclick="processResult(false)" class="w-full text-right p-4 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 smooth-hover flex flex-col justify-start">
+                            <span class="font-bold text-slate-500 text-sm">הסברים ומדריכים ללמידה עצמית של אוטומציות</span>
+                            <span class="text-slate-400 text-xs mt-1">אני מעדיף ללמוד לבנות את הדברים הללו בכוחות עצמי.</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Success Fit Result Container -->
+                <div id="result-fit-container" class="quiz-step hidden space-y-6 text-center">
+                    <div class="w-14 h-14 bg-teal-50 text-brandTeal rounded-full flex items-center justify-center text-2xl mx-auto">
+                        ✓
+                    </div>
+                    <h3 class="text-xl font-bold text-brandPurple">נראה שיש כאן התאמה מדויקת לשירות!</h3>
+                    <p class="text-slate-600 text-sm max-w-md mx-auto leading-relaxed">
+                        העסק שלכם מתמודד עם צווארי בקבוק ורעש תפעולי שניתן לפתור בצורה חדה וממוקדת. השאירו פרטים ונשוחח שיחת אבחון ראשונית ללא התחייבות:
+                    </p>
+                    
+                    <form onsubmit="submitLeadForm(event)" class="space-y-3 max-w-md mx-auto pt-4 text-right">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">שם מלא:</label>
+                            <input type="text" id="lead-name" required placeholder="לדוגמה: ישראל ישראלי" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">טלפון נייד:</label>
+                            <input type="tel" id="lead-phone" required placeholder="לדוגמה: 050-1234567" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">אימייל עסקי:</label>
+                            <input type="email" id="lead-email" required placeholder="לדוגמה: office@business.co.il" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800">
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-brandTeal hover:bg-brandTealHover text-white font-bold py-4 px-6 rounded-xl transition-all shadow-md shadow-brandTeal/10 mt-2">
+                            שליחת פרטים לשיחת אבחון והתאמה ←
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Unfit Result Container -->
+                <div id="result-unfit-container" class="quiz-step hidden space-y-6 text-center py-4">
+                    <div class="w-14 h-14 bg-slate-100 text-slate-500 rounded-full flex items-center justify-center text-xl mx-auto">
+                        i
+                    </div>
+                    <h3 class="text-lg font-bold text-brandPurple">פחות מתאים בשלב זה...</h3>
+                    <p class="text-slate-500 text-xs max-w-md mx-auto leading-relaxed">
+                        השירות מיועד ומתמקד בעסקים פעילים עם פעילות שוטפת ולקוחות קיימים שרוצים לפנות זמן ולייעל תשתיות קיימות. 
+                        לעסקים בהקמה ראשונית או למחפשי למידה עצמית, פרויקט פיתוח אישי פחות יתאים כעת.
+                    </p>
+                    <button onclick="resetQuiz()" class="text-xs text-brandTeal underline hover:text-brandPurple smooth-hover mt-4">
+                        התחלה מחדש של האבחון
+                    </button>
+                </div>
+
+                <!-- Real Form Submission Success Message -->
+                <div id="form-success-container" class="quiz-step hidden space-y-6 text-center py-6">
+                    <div class="w-16 h-16 bg-brandTeal text-white rounded-full flex items-center justify-center text-3xl mx-auto shadow-lg shadow-brandTeal/10">
+                        ✓
+                    </div>
+                    <h3 class="text-2xl font-bold text-brandPurple">הפרטים התקבלו בהצלחה</h3>
+                    <p class="text-slate-600 text-sm max-w-sm mx-auto leading-relaxed">
+                        תודה רבה. אני אעבור באופן אישי על האבחון שלכם ואחזור אליכם בהקדם (לרוב תוך 24 שעות) לתיאום שיחת אבחון טלפונית קצרה.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-white relative">
+        <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
+            <h2 class="text-3xl lg:text-4xl font-black text-brandPurple leading-tight">
+                מוכנים להחליף את הכאוס והעבודה הידנית בשקט נפשי?
+            </h2>
+            
+            <p class="text-slate-600 text-base lg:text-lg max-w-xl mx-auto leading-relaxed">
+                אם נמאס לכם לעבוד שעות ארוכות על משימות שגרתיות שוב ושוב, לפספס פניות ולהרגיש שהתפעול מעכב את העסק שלכם – הצעד הראשון לשקט מתחיל כאן.
+            </p>
+
+            <div class="pt-4">
+                <a href="#diagnostic-wizard" class="inline-block bg-brandPurple hover:bg-brandTeal text-white font-bold py-4.5 px-12 rounded-xl text-base shadow-xl transition-all duration-300">
+                    לתיאום שיחת אבחון והתאמה
+                </a>
+            </div>
+            
+            <p class="text-xs text-slate-400 font-medium">
+                * שיחת האבחון קצרה, ממוקדת וללא שום התחייבות מצידכם.
+            </p>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6 text-center text-xs border-t border-slate-800">
+        <div class="max-w-6xl mx-auto space-y-3">
+            <p>© 2026 פנינה Karayoff | AI Systems Architect. כל הזכויות שמורות.</p>
+            <p class="text-[10px] text-slate-500">מיפוי, בנייה ואופטימיזציה של תהליכים ומערכות לעסקים פעילים.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        // Node simulation control
+        function activateSimulationNode(nodeId) {
+            const feedbackText = document.getElementById('sim-feedback-text');
+            const lines = [
+                document.getElementById('conn-line-1'),
+                document.getElementById('conn-line-2'),
+                document.getElementById('conn-line-3')
+            ];
+
+            // Reset all nodes first
+            for(let i=1; i<=4; i++) {
+                const node = document.getElementById(`sim-node-${i}`).firstElementChild;
+                node.className = "w-10 h-10 rounded-full bg-white border-2 border-slate-300 text-slate-400 flex items-center justify-center font-bold text-xs group-hover:border-brandPurple group-hover:text-brandPurple smooth-hover shadow-sm";
+            }
+
+            // Color the selected node and preceding lines
+            if(nodeId >= 1) {
+                document.getElementById(`sim-node-1`).firstElementChild.className = "w-10 h-10 rounded-full bg-brandPurple border-2 border-brandPurple text-white flex items-center justify-center font-bold text-xs smooth-hover shadow-md";
+                feedbackText.textContent = "המערכת מזהה את פניות הלקוח הנכנסות ומאחסנת אותן אוטומטית.";
+            }
+            if(nodeId >= 2) {
+                document.getElementById(`sim-node-2`).firstElementChild.className = "w-10 h-10 rounded-full bg-brandPurple border-2 border-brandPurple text-white flex items-center justify-center font-bold text-xs smooth-hover shadow-md";
+                lines[0].setAttribute('stroke', '#0D9488');
+                feedbackText.textContent = "סנכרון מיידי בין כל המערכות הפנימיות מתחיל לרוץ ללא מגע יד אדם.";
+            } else {
+                lines[0].setAttribute('stroke', '#E2E8F0');
+            }
+            if(nodeId >= 3) {
+                document.getElementById(`sim-node-3`).firstElementChild.className = "w-10 h-10 rounded-full bg-brandPurple border-2 border-brandPurple text-white flex items-center justify-center font-bold text-xs smooth-hover shadow-md";
+                lines[1].setAttribute('stroke', '#0D9488');
+                feedbackText.textContent = "הנתונים מוזנים ישירות לבסיס הנתונים ומעדכנים את היומן והמשימות.";
+            } else {
+                lines[1].setAttribute('stroke', '#E2E8F0');
+            }
+            if(nodeId >= 4) {
+                document.getElementById(`sim-node-4`).firstElementChild.className = "w-10 h-10 rounded-full bg-brandTeal border-2 border-brandTeal text-white flex items-center justify-center font-bold text-xs smooth-hover shadow-md";
+                lines[2].setAttribute('stroke', '#0D9488');
+                feedbackText.textContent = "תהליך שלם הושלם בשניות. השגתם שקט תפעולי מוחלט!";
+            } else {
+                lines[2].setAttribute('stroke', '#E2E8F0');
+            }
+        }
+
+        // Diagnostic Wizard Logic
+        let isSuitableLead = true;
+
+        function navigateQuiz(step, suitabilityMarker) {
+            // Apply suitability logic based on choices
+            if (suitabilityMarker === false) {
+                isSuitableLead = false;
+            }
+
+            // Hide all steps
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
+
+            // Show current step
+            document.getElementById(`quiz-step-${step}`).classList.remove('hidden');
+
+            // Progress bar mapping
+            const progressBar = document.getElementById('wizard-progress-bar');
+            if (step === 2) progressBar.style.width = '66%';
+            if (step === 3) progressBar.style.width = '100%';
+        }
+
+        function processResult(finalChoiceMarker) {
+            if (finalChoiceMarker === false) {
+                isSuitableLead = false;
+            }
+
+            // Hide all quiz steps
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
+
+            // Show appropriate outcome container
+            if (isSuitableLead) {
+                document.getElementById('result-fit-container').classList.remove('hidden');
+            } else {
+                document.getElementById('result-unfit-container').classList.remove('hidden');
+            }
+        }
+
+        function resetQuiz() {
+            isSuitableLead = true;
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
+            document.getElementById('quiz-step-1').classList.remove('hidden');
+            document.getElementById('wizard-progress-bar').style.width = '33%';
+        }
+
+        function submitLeadForm(event) {
+            event.preventDefault();
+            // Validate and hide fit container to show success message
+            document.getElementById('result-fit-container').classList.add('hidden');
+            document.getElementById('form-success-container').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
