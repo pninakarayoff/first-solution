@@ -85,6 +85,12 @@
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255,255,255,0.09);
     }
+
+    .testimonial-frame {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    }
   </style>
 </head>
 <body class="selection:bg-brandTeal selection:text-pageDark overflow-x-hidden antialiased">
@@ -316,17 +322,21 @@
           לא רק מסר יפה. תהליך שעוזר לעשות סדר ולהתחיל לזוז.
         </h2>
         <p class="text-slate-500 text-sm md:text-base leading-relaxed">
-          אלה לא הבטחות כלליות. אלה תגובות אמיתיות של נשים שיצאו עם יותר בהירות, יותר כיוון ויותר יכולת להתחיל לפעול.
+          אלה תגובות אמיתיות של נשים שיצאו עם יותר בהירות, יותר כיוון ויותר יכולת להתחיל לפעול.
         </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        <div class="bg-white border border-slate-200 rounded-[28px] p-4 shadow-card">
-          <img src="anat.jpg" alt="עדות לקוחה" class="w-full rounded-[20px] object-cover" />
+        <div class="testimonial-frame rounded-[30px] p-4 md:p-5">
+          <div class="bg-white rounded-[24px] p-3 border border-slate-100">
+            <img src="anat.jpg" alt="עדות לקוחה" class="w-full rounded-[18px] object-cover" />
+          </div>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-[28px] p-4 shadow-card">
-          <img src="jenssya.jpeg" alt="עדות לקוחה" class="w-full rounded-[20px] object-cover" />
+        <div class="testimonial-frame rounded-[30px] p-4 md:p-5">
+          <div class="bg-white rounded-[24px] p-3 border border-slate-100">
+            <img src="jenssya1.jpeg" alt="עדות לקוחה" class="w-full rounded-[18px] object-cover" />
+          </div>
         </div>
       </div>
     </div>
