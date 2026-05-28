@@ -118,6 +118,7 @@
 
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
         <a href="#problem" class="hover:text-white smooth-hover">האתגר</a>
+        <a href="#video-section" class="hover:text-white smooth-hover">סרטון</a>
         <a href="#about-service" class="hover:text-white smooth-hover">מה אני עושה</a>
         <a href="#testimonials" class="hover:text-white smooth-hover">עדויות</a>
         <a href="#solutions-grid" class="hover:text-white smooth-hover">מה אפשר לבנות</a>
@@ -220,6 +221,34 @@
             <div class="text-xs font-bold">פחות ידני</div>
             <div class="text-xs font-bold">יותר סדר</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="video-section" class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto space-y-10">
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-brandTeal">המחשה קצרה</span>
+        <h2 class="text-3xl lg:text-4xl font-black text-pageDark">
+          כך זה נראה בפועל
+        </h2>
+        <p class="text-slate-500 text-sm md:text-base leading-relaxed">
+          סרטון קצר שממחיש את המעבר מעומס, ידני וחוסר סדר לפתרון ראשון ברור ומדויק יותר.
+        </p>
+      </div>
+
+      <div class="rounded-[30px] overflow-hidden shadow-card border border-slate-200 bg-black max-w-4xl mx-auto">
+        <div class="aspect-video">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/zTfBfWpmAaA?rel=0&modestbranding=1"
+            title="פנינה קריוף - פתרון ראשון לעסק"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
     </div>
@@ -536,8 +565,7 @@
                 name="name"
                 required
                 placeholder="לדוגמה: ישראלה ישראלי"
-                class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
-              >
+                class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800">
             </div>
 
             <div>
@@ -547,8 +575,7 @@
                 name="phone"
                 required
                 placeholder="050-1234567"
-                class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
-              >
+                class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800">
             </div>
 
             <div>
@@ -558,8 +585,7 @@
                 name="email"
                 required
                 placeholder="office@business.co.il"
-                class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
-              >
+                class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800">
             </div>
 
             <div>
@@ -569,8 +595,7 @@
                 rows="4"
                 required
                 placeholder="כמה מילים על מה שמרגיש מסורבל, ידני או עמוס"
-                class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"
-              ></textarea>
+                class="w-full bg-slate-50 border border-slate-200 rounded-2xl p-3 text-sm focus:outline-none focus:border-brandTeal text-slate-800"></textarea>
             </div>
 
             <input type="hidden" name="_subject" value="פנייה חדשה מדף מיפוי ובניית פתרון ראשון לעסק">
@@ -578,8 +603,7 @@
             <button
               type="submit"
               id="submit-button"
-              class="w-full bg-pageDark hover:bg-brandPurple text-white font-bold py-4 px-6 rounded-2xl transition-all shadow-card mt-2"
-            >
+              class="w-full bg-pageDark hover:bg-brandPurple text-white font-bold py-4 px-6 rounded-2xl transition-all shadow-card mt-2">
               לשליחת פרטים לשיחת אבחון
             </button>
           </form>
@@ -607,8 +631,7 @@
     class="fixed bottom-4 left-4 right-4 z-[100] hidden cookie-banner-enter"
     role="dialog"
     aria-live="polite"
-    aria-label="הודעת עוגיות"
-  >
+    aria-label="הודעת עוגיות">
     <div class="max-w-5xl mx-auto rounded-[24px] bg-white border border-slate-200 shadow-card p-5 md:p-6">
       <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
         <div class="flex-1 text-right">
@@ -624,16 +647,14 @@
           <button
             id="cookie-accept-all"
             type="button"
-            class="bg-brandTeal hover:bg-brandTealHover text-pageDark font-extrabold py-3 px-5 rounded-xl smooth-hover"
-          >
+            class="bg-brandTeal hover:bg-brandTealHover text-pageDark font-extrabold py-3 px-5 rounded-xl smooth-hover">
             מאשרת הכול
           </button>
 
           <button
             id="cookie-essential-only"
             type="button"
-            class="bg-pageDark hover:bg-brandPurple text-white font-bold py-3 px-5 rounded-xl smooth-hover"
-          >
+            class="bg-pageDark hover:bg-brandPurple text-white font-bold py-3 px-5 rounded-xl smooth-hover">
             רק הכרחי
           </button>
         </div>
@@ -689,7 +710,6 @@
       localStorage.setItem("site_cookie_consent", mode);
       hideCookieBanner();
 
-      // מקום עתידי להפעלת סקריפטים לא הכרחיים רק לאחר הסכמה
       if (mode === "all") {
         window.cookieConsentMode = "all";
       } else {
